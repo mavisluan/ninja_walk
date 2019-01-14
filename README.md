@@ -1,0 +1,2 @@
+- Ninja-walk is created with HTML and CSS.
+- You can control and move the ninja to walk to different directions with arrow keys on your keyboard.
