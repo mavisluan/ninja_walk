@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ninja Master</title>
+    </head>
+    <body>
+        <style type='text/css'>
+            #ninja {
+                background-image: url('./img/down1.png');
+                width: 59px;
+                height: 86px;
+                position: absolute;
+                left: 300px;
+                top: 100px;
+            }
+        </style>
+        <div id='ninja'></div>
+
+        <script type='text/javascript'>
+            var leftValue = 300, topValue = 100, direction = 'down', step = 1
+            document.onkeydown = function(e) {
+                if(e.keyCode == 37) { //LEFT
+                    leftValue -= 10
+                    direction = 'left'
+                } else if (e.keyCode == 39) { //RIGHT
+                    leftValue += 10
+                    direction = 'right'
+                } else if (e.keyCode == 38) { //UP
+                    topValue -= 10
+                    direction = 'top'
+                } else if (e.keyCode == 40) { //DOWN
+                    topValue += 10
+                    direction = 'down'
+                }
+                (step == 1) ? step = 2 : step = 1
+                drawNinja()
+            }
+
+            function drawNinja() {
+                document.getElementById('ninja').style.backgroundImage = "url('./img/" + direction + step + ".png')"
+                document.getElementById('ninja').style.left = leftValue + "px"
+                document.getElementById('ninja').style.top = topValue + "px"
+            }
+        </script>
+    </body>
+</html>
